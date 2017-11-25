@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans+Condensed:300,300i,700');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+
+body {
+  background-color: #000;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #EEE;
+  text-transform: lowercase;
+  line-height: 1em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-shadow:
+    -4px -4px 0 #333,
+		4px -4px 0 #333,
+		-4px 4px 0 #333,
+		4px 4px 0 #333;
+}
+
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  background-color: #111;
+  color: #FAFAFA;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 300;
+  padding: 8px;
+  text-transform: initial;
+}
+
+.reveal h4 {
+  text-decoration: underline;
+}
+
+.reveal ul {
+  margin: 10px auto;
+  width: 90%;
+}
+.reveal ul li {
+  list-style-type: square;
+  list-style-position: left;
+}
+.reveal ul li li {
+  font-size: 0.7em;
+  list-style-type: circle;
+  list-style-position: left;
+}
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #888;
+}
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #888;
+}
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #888;
+}
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #888;
+}
+
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #888;
+}
+
+.reveal img.icon {
+  height: 100px;
+  width: 100px;
+}
+
+.reveal a,
+.reveal a:visited {
+  background-color: #333;
+  border-radius: 12px;
+  color: #CCC;
+  font-weight: 100;
+  padding: 0 12px;
+  transition: 0.3s ease all;
+}
+
+.reveal a:hover,
+.reveal a:focus {
+  background-color: #222;
+  color: #FFF;
+  transition: 0.3s ease all;
+}
+
+.reveal blockquote {
+  min-width: 80%;
+  padding: 8px 32px;
+  text-align: left;
+}
+
+.reveal code {
+  text-transform: initial;
+}
+
+.reveal p,
+.reveal {
+  font-family: 'Inconsolata', monospace;
+  text-transform: lowercase;
+}
+
+.reveal table tr td {
+  padding-top: 0.5em;
+  vertical-align: top;
+}

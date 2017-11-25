@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "reveal-md --css ./src/styles.css -w ./src/slides.md"
+  }
+}
