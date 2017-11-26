@@ -9,7 +9,7 @@ revealOptions:
   controls: true
 ---
 
-<!-- .slide: class="center" data-background="./front-splash.jpg"  -->
+<!-- .slide: class="center" data-background="./cicdjs-front-splash.jpg"  -->
 # Continuously Delivering Full-Stack JavaScript
 #### talk.js november 2017 meetup
 ___
@@ -1137,25 +1137,46 @@ ___
 (friends don't let friends deploy on fridays)
 </small>
 _____
-# thank you
-<small>
-谢谢  
-terima kasih  
-धन्यवाद  
-ขอขอบคุณ  
-ありがとうございました  
-고맙습니다  
-cảm ơn bạn  
-</small>
-- - -
-**iam: joseph matthias goh**
-<table>
+<table style="margin-top:-20px;width:100%">
+  <tr>
+    <td style="text-align:center;width:50%">
+      <h1>thank you</h1>
+      <small>
+      terima kasih  
+      谢谢  
+      ขอขอบคุณ  
+      धन्यवाद  
+      cảm ơn bạn  
+      ありがとうございました  
+      고맙습니다  
+      danke  
+      tack  
+      je vous remercie  
+      grazie  
+      </small>
+    </td>
+    <td style="text-align:center;width:50%;">
+      <h4>
+        got feedback?
+      </h4>
+      <img src="./feedback-logo-white.png"
+        style="border: none !important;width:340px;height:340px" />
+      <small>
+        <small>
+          https://goo.gl/forms/GjW2cXfcJqRPqben1
+        </small>
+      </small>
+    </td>
+  </tr>
+</table>
+<table style="margin-top:-24px;">
   <tr>
     <td>
       <i class="fa fa-2x fa-envelope"></i>
     </td>
     <td>
       <small>
+        **iam: joseph matthias goh**  
         <i class="fa fa-briefcase"></i> | <a href="mailto:joseph_goh@tech.gov.sg" target="_blank">joseph_goh@tech.gov.sg</a> (business)  
         <i class="fa fa-comment"></i> | <a href="mailto:hello@joeir.net" target="_blank">hello@joeir.net</a> (pleasure)  
         <i class="fa fa-github" style="font-size: 1.18em;"></i> | <a href="https://github.com/zephinzer" target="_blank">zephinzer</a> (stalking)
