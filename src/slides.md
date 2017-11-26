@@ -11,12 +11,11 @@ revealOptions:
 
 <!-- .slide: class="center" data-background="./front-splash.jpg"  -->
 # Continuously Delivering Full-Stack JavaScript
-#### joseph matthias goh
-
+#### talk.js november 2017 meetup
 ___
 <!-- .slide: class="center" -->
 
-## JOSEPH MATTHIAS GOH
+#### joseph matthias goh
 
 <table>
   <tr>
