@@ -1,5 +1,9 @@
 {
+  "author": "zephinzer <dev-ät-joeir-döt-nët>",
+  "version": "1.0.0",
   "scripts": {
+    "build": "reveal-md ./src/slides.md --static ./static",
+    "print": "reveal-md ./src/slides.md --print ./build/slides.pdf",
     "start": "reveal-md --css ./src/styles.css -w ./src/slides.md"
   }
 }

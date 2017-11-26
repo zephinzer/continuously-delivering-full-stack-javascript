@@ -11,39 +11,55 @@ revealOptions:
 
 <!-- .slide: class="center" data-background="./front-splash.jpg"  -->
 # Continuously Delivering Full-Stack JavaScript
-
-#### IAM: JOSEPH MATTHIAS GOH
+#### joseph matthias goh
 
 ___
 <!-- .slide: class="center" -->
 
-## about me
+## JOSEPH MATTHIAS GOH
 
 <table>
   <tr>
     <td>
-      <i class="fa fa-2x fa-info-circle"></i>
+      <i class="fa fa-info-circle"></i>
     </td>
     <td>
-      Software & DevOps/Ops Engineer specialising in full-stack web development  
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <i class="fa fa-2x fa-briefcase"></i>
-    </td>
-    <td>
-      Government Digital Services, GovTech Singapore
+      <small>
+        Software & DevOps/Ops Engineer specialising in full-stack web development  
+      </small>
     </td>
   </tr>
   <tr>
     <td>
-      <i class="fa fa-2x fa-envelope"></i>
+      <i class="fa fa-briefcase"></i>
     </td>
     <td>
-      <i class="fa fa-comment"></i> | <a href="mailto:hello@joeir.net" target="_blank">hello@joeir.net</a>  
-      <i class="fa fa-briefcase"></i> | <a href="mailto:joseph_goh@tech.gov.sg" target="_blank">joseph_goh@tech.gov.sg</a>  
-      <i class="fa fa-github" style="font-size: 1.18em;"></i> | <a href="https://github.com/zephinzer" target="_blank">zephinzer</a>  
+      <small>
+        Government Digital Services, GovTech Singapore
+      </small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <i class="fa fa-envelope"></i>
+    </td>
+    <td>
+      <small>
+        <i class="fa fa-briefcase"></i> | <a href="mailto:joseph_goh@tech.gov.sg" target="_blank">joseph_goh@tech.gov.sg</a> (business)  
+        <i class="fa fa-comment"></i> | <a href="mailto:hello@joeir.net" target="_blank">hello@joeir.net</a> (pleasure)  
+        <i class="fa fa-github" style="font-size: 1.18em;"></i> | <a href="https://github.com/zephinzer" target="_blank">zephinzer</a> (stalking)
+      </small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <i class="fa fa-gavel"></i>
+    </td>
+    <td>
+      <small>
+        [Attribution-NonCommercial-ShareAlike 3.0 Singapore](https://creativecommons.org/licenses/by-nc-sa/3.0/sg/)  
+        [GitHub Repository Link](https://github.com/zephinzer/continuously-delivering-full-stack-javascript)
+      </small>
     </td>
   </tr>
 </table>
@@ -52,7 +68,9 @@ _____
 <!-- .slide: class="center" data-background="./why-you-should-listen-l.jpg"  -->
 # why you should listen
 
-#### if code is written but never deployed, was it ever really written?
+___
+<!-- .slide: class="center" -->
+if code is written but never deployed, was it ever really written?
 ___
 ## got that one big idea?
 
@@ -74,7 +92,7 @@ ___
 <!-- .slide: class="center" -->
 ~10s page load timing
 
-<small>(5s is infinity in internet time)</small>
+<small>(hint: 5s is infinity in internet time)</small>
 
 ___
 <!-- .slide: class="center" -->
@@ -141,23 +159,22 @@ we're hiring for devops/ops
 _____
 <!-- .slide: class="center" data-background="./continuous-delivery-l.jpg"  -->
 # continuous delivery
-#### getting the goods to the user, consistently
+
+___
+<!-- .slide: class="center" -->
+getting the goods to the user, consistently
 ___
 ## agile development
 
 - iterative development methodology
-- write code, deliver, get feedback, improve
+  - **business objectives**
+  - **user stories**
+  - **development work**
+  - **delivery**
+  - **user feedback**
+  - **improvement**
 - change is the only const
 
-___
-## the delivery cycle
-
-- **business objectives**
-- **user stories**
-- **development work**
-- **delivery**
-- **user feedback**
-- **improvement**
 
 ___
 ## technical concerns
@@ -191,7 +208,10 @@ ___
 _____
 <!-- .slide: class="center" data-background="./about-deployments-l.jpg"  -->
 # about deployments
-#### what it is and what it isn't
+
+___
+<!-- .slide: class="center" -->
+what it is and what it isn't
 
 ___
 ## deployment
@@ -274,7 +294,7 @@ ___
 #### what it is not
 
 - is **not** the environment
-  - avoid correlating environemnts with deployments
+  - avoid correlating environments with deployments
   - correlate environments with product behaviour
 - is **not** just production
   - deploy to dev after successful build
@@ -282,51 +302,35 @@ ___
   - deploy to uat after integration tests
   - deploy to staging after non-functional tests
   - deploy to production after staging is successful
-
-_____
-<!-- .slide: class="center" data-background="./getting-to-deploy-l.jpg"  -->
-# getting to deploy
-#### tools of the trade
 ___
-## source control
-
-- a single source of truth for the codebase
-- developers push to this repository
-- - -
-- github, bitbucket, gitlab
-- git, mercurial, svn
-___
-## ci agents/runners
-
-- an automated task runner
-- picks up code pushes to the repository
-- runs pre-configured tasks (aka jobs)
-- - -
-- travis, gitlab, teamcity, bamboo
-___
-## containerisation tool
-
-- for creating container-based deployments
-- ensure system environment consistency
-- bundle application into an immutable release
-- - -
-- docker
-___
-## orchestrator
-
-- for managing deployments
-- injection of environment variables
-- configuring availability
-- - -
+## deployment
+#### tools of the trade (vms)
 - pm2
+- foreman
+- nodemon
+- vagrant
+___
+## deployment
+#### tools of the trade (containers)
+- docker
+- pm2-docker
+- docker compose
 - docker swarm
 - kubernetes
-- google container engine
-- aws ec2 container service
-- azure container service
+___
+## deployment
+#### paid services
+- heroku
+- red hat openshift (os)
+- google container engine (gke)
+- aws ec2 container service (ecs)
+- azure container service (acs?)
 _____
 <!-- .slide: class="center" data-background="./how-we-did-it-l.jpg"  -->
 # how we did it
+___
+<!-- .slide: class="center" -->
+something that, well, has worked (so far)
 ___
 ## application architecture
 #### front-end
@@ -337,75 +341,21 @@ ___
 - express/swagger
 - web api application
 ___
-## code logistics
-- git for revision control
-- gitlab for a single source of truth
-- yarn for dependency management
-- modified trunk-based development
-- feature branches for code review
-___
-## build process
-- webpack for coordinating build process
-- babel for es7 transpilation
-- uglify for code optimisation
-- code splitting during bundle creation
-- front-end cache reset
-___
-## testing
-#### static analysis
-- eslint static code analysis
-- nsp for security vulnerability checks
-- swagger/docker lint
-___
-## testing
-#### functional tests
-- mocha test framework universally
-- karma test runner for front-end
-- mocha test runner for back-end
-- istanbul for unit/system test coverage
-- robot framework for integration tests
-___
-## testing
-#### non-functional tests
-- gatling for load testing
-- nessus for penetration testing
-___
-## releasing
-- versioning using git tags
-- docker image building and pushing to private docker registry
-___
-## source control
-#### gitlab
-- git
-- free
-- on-premise
-- integrated ci pipeline
-- really agile development team
-___
-## ci agents/runners
-#### gitlab ci runners
-- ci tasks defined in a .gitlab-ci.yml in the codebase
-  - empowers developers to make changes
-  - devops as a shared responsibility
-- container based build/test/deploy tasks
-- multiple remote runners across vm instances
-___
-## containerisation tool
-#### docker
-- infrastructure as code
-- releasing of application as a versioned, immutable image
-- image upload to private, on-premise container registry
-___
-## orchestrator
-#### kubernetes
-- infrastructure as code
-- works with aws & gcp
-- integrates with gitlab ci runners
-- deployment done by remote runner on a vm running kubernetes
+<!-- .slide: class="center contain" data-background="./mcfcd-overview.png"-->
+
+_____
+<!-- .slide: class="center" -->
+# objectives
+
+allow developers to push often  
+deploy easily & frequently  
+reduce time to production  
 _____
 <!-- .slide: class="center" data-background="./deployment-friendly-javascript-l.jpg"  -->
 # development
-
+___
+<!-- .slide: class="center" -->
+writing deployment-friendly javascript
 ___
 ## codebase management
 #### one codebase; one application
@@ -619,75 +569,160 @@ ___
 - keeps application stateless
 - allows for logs to be collated by process manager/container orchestrator
 - do logs filtering from logs collator
+___
+## in summary
+<small>
+one codebase; one application  
+define tasks in package.json  
+isolate & lazy-load `devDependencies`  
+use a lockfile for dependencies  
+keep configuration out of the code  
+version your data schema  
+.listen() as soon as possible  
+use stateless authentication methods  
+one service connection per application instance  
+log to stdout
+</small>
 _____
 <!-- .slide: class="center" data-background="./building-l.jpg"  -->
 # building
+___
+<!-- .slide: class="center" -->
+include what's needed and let that be enough  
 
+<small>
+(and be snappy about that)
+</small>
+___
+## build management
+#### build in encapsulated environments
+- binaries may differ across operating systems
+- ensure consistency of builds
+- use a `Dockerfile`
 ___
 ## dependency optimisation
-#### version your dependencies
-
-- reusing dependencies shorten the build duration
+#### version your dependencies (I)
+- hasten builds
 - hash the lockfile/package.json for the dependency version
 
 ```bash
 HASH="$(md5 ./yarn.lock)$(md5 ./package.json)";
+```
+
+___
+## dependency optimisation
+#### version your dependencies (II)
+- build only if hash doesn't exist
+- push after the build is completed
+
+```bash
+HASH="$(md5 ./yarn.lock)$(md5 ./package.json)";
 docker pull registry.com/namespace/dependencies:${HASH};
-if [ "$?" != '0' ]; then yarn build; fi;
+if [ "$?" != '0' ]; then
+  docker build
+    --file dev-dependencies.Dockerfile
+    --tag registry.com/namespace/dependencies:${HASH} .;
+  docker push registry.com/namespace/dependencies:${HASH};
+fi;
+```
+___
+## dependency optimisation
+#### version your dependencies (III)
+- dependency building dockerfile
+  ```dockerfile
+  FROM zephinzer/alpine-node:v8.9.1
+  WORKDIR /app
+  COPY ./package.json /app/package.json
+  COPY ./yarn.lock /app/yarn.lock
+  RUN yarn install
+  ```
+- dockerfile for application build
+```dockerfile
+ARG HASH="latest"
+FROM registry.com/namespace/dependencies:${HASH}
+WORKDIR /app
+COPY . /app
+RUN ...
+```
+___
+## code optimisation
+#### code compression
+- minimises code size
+- read more: [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
+
+```javascript
+plugins: [
+  ...,
+  new UglifyJsPlugin({
+    include: /\/src/
+  }),
+],
+```
+___
+## code optimisation
+#### bundle compression
+- minimises file size
+- read more: [compression-webpack-plugin](https://github.com/webpack-contrib/compression-webpack-plugin)
+
+```javascript
+plugins: [
+  ...,
+  new CompressionPlugin({
+    algorithm: gzip,
+    minRatio: 0.6
+  }),
+],
 ```
 ___
 ## code optimisation
 #### code splitting (I)
-
-- improve page load times
-- bundle common chunks of code together
-- if project is stable, feature level code splits
+- faster page load timings
+- dependencies/development code splits
+- feature level code splits
+- read more: [`CommonChunksPlugin`](https://webpack.js.org/plugins/commons-chunk-plugin/)
 ___
 ## code optimisation
 #### code splitting (II)
-
 - node_modules hardly changes, add them to a 'common chunk'
-- `CommonChunksPlugin` for Webpack
 
 ```javascript
 entry: {
+  ...,
   vendor: ["./node_modules"],
-  app: "./entrypoint.js"
 },
 plugins: [
+  ...,
   new webpack.optimize.CommonsChunkPlugin({
     name: "vendor",
     minChunks: Infinity,
-  })
-]
+  }),
+],
 ```
 ___
 ## code optimisation
 #### client-side caching (I)
-
 - improve page load times
 - use service worker precache by google
 - cache code bundles/static assets
+- read more: [sw-precache-webpack-plugin](https://github.com/goldhand/sw-precache-webpack-plugin)
 ___
 ## code optimisation
 #### client-side caching (II)
 
-- using `sw-precache-webpack-plugin' in the build
+- file changes to any paths inside `staticFileGlobs` will bust the cache
 
 ```javascript
 plugins: [
-  new SWPrecacheWebpackPlugin(
-    {
-      cacheId: 'projectId',
-      filename: 'sw.js',
-      minify: true,
-      navigateFallback: PUBLIC_PATH + 'index.html',
-      staticFileGlobs: [
-        /* paths to files intended for caching */
-      ],
-      mergeStaticsConfig: true,
-    }
-  ),
+  ...,
+  new SWPrecacheWebpackPlugin({
+    cacheId: 'projectId',
+    filename: 'sw.js',
+    staticFileGlobs: [
+      './static/*',
+      /* other paths to files intended for caching */
+    ],
+    mergeStaticsConfig: true,
+  }),
 ],
 ```
 ___
@@ -703,13 +738,180 @@ ___
   }
 })();
 ```
+___
+## summary
+<small>
+version dependencies for re-use  
+minify and optimise code  
+compress file size of bundle  
+split code by change frequency  
+split code by features  
+client-side caching
+</small>
+_____
+<!-- .slide: class="center" data-background="./automated-testing-l.jpg"  -->
+# automated testing
+___
+<!-- .slide: class="center" -->
+prevent things from breaking  
+when moving too quickly
+___
+## code management
+#### static analysis (I)
+- improve readability, control complexity
+- eslint
+- google-config for general javascript
+  - read more: [eslint-config-google](https://github.com/google/eslint-config-google)
+- airbnb-config for react.js
+  - read more: [eslint-config-airbnb](https://github.com/airbnb/javascript)
+___
+## code management
+#### static analysis (II)
+- prevent security breaches
+- scanjs-config for security vulnerabilities
+  - read more: [eslint-config-scanjs](https://github.com/mozfreddyb/eslint-config-scanjs)
+  - read more: [eslint-plugin-scanjs-rules](https://github.com/mozfreddyb/eslint-plugin-scanjs-rules)
+___
+## code management
+#### static analysis (III)
+- implement it via `.eslintrc.json`
+  ```javascript
+  {
+    "extends": [
+      "google", // OR
+      "airbnb"
+    ],
+    "plugins": [
+      "scanjs-rules"
+    ]
+  }
+  ```
+___
+## functional verification
+#### unit/system tests
+<table style="width:100%">
+  <tr style="width:100%">
+    <td>
+    <small>
+      frameworks
+    </small>
+    </td>
+    <td>
+    <small>
+      assertion
+    </small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <small>
+        [mocha](https://github.com/mochajs/mocha)  
+        [jest](https://github.com/facebook/jest)
+      </small>
+    </td>
+    <td>
+      <small>
+        [chai](https://github.com/chaijs/chai)  
+        [jasmine](https://github.com/jasmine/jasmine)  
+        [should](https://github.com/shouldjs/should.js/)  
+      </small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    <small>
+      stubbing/mocking
+    </small>
+    </td>
+    <td>
+    <small>
+      runners
+    </small>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <small>
+        [sinon](https://github.com/sinonjs/sinon)  
+        [rewire](https://github.com/jhnns/rewire)  
+        [proxyquire](https://github.com/thlorenz/proxyquire)  
+        [supertest](https://github.com/visionmedia/supertest)  
+      </small>
+    </td>
+    <td>
+      <small>
+        [karma](https://github.com/karma-runner/karma)  
+        [ava](https://github.com/avajs/ava)  
+      </small>
+    </td>
+  </tr>
+</table>
 
+___
+## functional verification
+#### integration tests (I)
+- end to end testing to verify user journey fulfilment
+- codecept.js acceptance testing
+  - read more: [codeceptjs](https://github.com/codeception/codeceptjs/)
+- robot test framework
+  - read more: [robot](https://github.com/robotframework/robotframework)
+___
+## functional verification
+#### integration tests (II)
+- human point-of-view tests
+  ```javascript
+  Feature('User Onboarding');
+
+  Scenario('From Facebook', (I) => {
+    I.amOnPage('/?utm_campaign=facebook');
+    I.see('Login via Facebook');
+    I.click('Login via Facebook');
+    I.amOnPage('/register/facebook');
+  });
+  ```
+___
+## non-functional verification
+- estimate load-accepting capacity
+- gatling load testing
+  - read more: [gatling](https://github.com/gatling/gatling)
+- prevent security vulnerabilities
+- w3af pen testing
+  - read more: [w3af](https://github.com/andresriancho/w3af)
+___
+## summary
+<small>
+  ensure code maintainability  
+  ensure code level security  
+  unit and system tests  
+  integration tests  
+  load tests  
+  penetration tests
+</small>
 _____
 <!-- .slide: class="center" data-background="./release-l.jpg"  -->
 # releasing
-
 ___
-## versioning
+<!-- .slide: class="center" -->
+crafting well-defined deployments
+___
+## version management
+#### use semver
+
+- semver standard
+
+```nonsense
+   X  .  Y  .  Z
+   ^     ^     ^
+   |     |     \-> patch version
+   |     \-> minor version
+   \-> major version
+```
+
+- patch version for bug fixes
+- minor version for non-breaking changes
+- major version for breaking changes
+___
+## version management
 #### avoid package.json
 
 - avoid modifying code when automating the versioning
@@ -718,8 +920,8 @@ ___
 - solution: use codebase meta data such as git tags
 
 ___
-## versioning
-#### using git tags
+## version management
+#### using git tags (I)
 
 - add a git tag with:
   ```bash
@@ -729,39 +931,236 @@ ___
   ```bash
   git tag --list
   ```
-- get latest tag with:
+- query latest tag with:
   ```bash
   git describe --abbrev=1 --tags
   ```
+- delete a tag with:
+  ```
+  git tag -d 1.0.0
+  ```
+___
+## version management
+#### using git tags (II)
+- [github.com/zephinzer/version-tagging-scripts](https://github.com/zephinzer/version-tagging-scripts) (DISCLAIMER: yours truly)
+- initialize your repository:
+  - ./versioning-tagging-scripts/init -q
+- get the latest tag:
+  - ./versioning-tagging-scripts/get-latest -q
+- iterate upwards with:
+  - ./versioning-tagging-scripts/iterate patch -q -i
+  - ./versioning-tagging-scripts/iterate minor -q -i
+  - ./versioning-tagging-scripts/iterate major -q -i
+___
+## package management
+#### using docker for immutability
+- create a `Dockerfile` to package the application
+  ```
+  FROM zephinzer/alpine-node:latest
+  WORKDIR /app
+  COPY . /app
+  RUN yarn build
+  ```
+- build and tag it with the semver version
+  ```bash
+  docker build
+    --file /path/to/Dockerfile
+    --tag registry.com/repo/app:${VERSION} .;
+  docker push registry.com/repo/app:${VERSION};
+  ```
 
 ___
-## versioning
-#### using git tags
-- [github.com/zephinzer/version-tagging-scripts](https://github.com/zephinzer/version-tagging-scripts) (DISCLAIMER: mine)
-___
-## packaging with docker
-
+## summary
+<small>
+use semver  
+avoid package.json  
+use git tags  
+package immutably
+</small>
 _____
 <!-- .slide: class="center" data-background="./deploying-l.jpg"  -->
 # deploying
-
+___
+<!-- .slide: class="center" -->
+getting it out there and ensuring  
+it stays up
 ___
 ## infrastructure as code
-
+- empowers developers
+- devops/ops as a shared responsibility
+- using k8s, we can deploy with:
+  ```bash
+  kubectl apply -f ./specfile.yml
+  ```
 ___
-## isolate services
-
+## infrastructure as code
+#### base system definition
+- specify this in `Dockerfile`
+```dockerfile
+FROM system-name:${VERSION}
+...
+```
+___
+## infrastructure as code
+#### deploying with k8s (I)
+- creating a deployment on kubernetes using specfile
+  ```yaml
+  kind: Deployment
+  spec:
+    template:
+      spec:
+        containers:
+        - name: application-name
+          image: registry.com/repo/app:latest
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 3000
+  ```
+___
+## infrastructure as code
+#### deploying with k8s (II)
+- injecting environment through the specfile
+  ```yaml
+  kind: Deployment
+  spec:
+    template:
+      spec:
+        containers:
+        - env:
+          - name: NODE_ENV
+            value: production
+          - name: DB_HOST
+            value: example.rds12345.amazonaws.com
+  ```
+___
+## infrastructure as code
+#### deploying with k8s (III)
+- scaling via the process model
+- specifying availability parameters on kubernetes using specfile
+  ```yaml
+  kind: Deployment
+  spec:
+    replicas: 30
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 15
+        maxSurge: 15
+  ```
+___
+## infrastructure as code
+#### deploying with k8s (IV)
+- expose your application via port binding
+- exposing deployment on kubernetes using specfile
+  ```yaml
+  kind: Service
+  spec:
+    ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 3000
+  ```
+___
+## service management
+#### three types
+- application service
+  - your application
+- backing services
+  - databases, key-value stores
+- administrative services
+  - data synchronisors, schema updaters
+___
+## service management
+#### application/backing services
+- use the `Deployment` specfile
+- deploy as shown in prevous slides
+___
+## service management
+#### administrative services
+- use the `CronJob` specfile
+```yaml
+kind: CronJob
+spec:
+  schedule: "0 5 * * *"
+  jobTemplate:
+    spec:
+      template:
+        containers:
+        - name: database-schema-updater
+          image: registry.com/repo/app:latest
+          args:
+          - npm
+          - run
+          - migrations
+```
 ___
 ## configure for quantity
+- node is single threaded, scale out for concurrency
+- spin up many instances, let them die on...
 
-- node is single threaded
-- 
-
+- - -
+memory leaks  
+*its not a matter of if, but when*
+- - -
 ___
+## configure for quantity
+#### setting memory bounds on k8s
+- use the `resources` property in the specfile
+  ```yaml
+  kind: Deployment
+  spec:
+    template:
+      spec:
+        replicas: 50
+        containers:
+        - resources:
+            limits:
+              cpu: "150m"
+              memory: "200Mi"
+            requests:
+              cpu: "100m"
+              memory: "150Mi"
+  ``` 
+___
+## summary
+<small>
+define infrastructure as code  
+deploy application and backing services with `Deployment`s  
+deploy administrative services with `CronJob`s  
+optimise deployment for quantity  
+mitigate memory leaks via disposability principle  
+</small>
+___
+<!-- .slide: class="center" -->
 ## don't deploy on fridays
-
+<small>
+(friends don't let friends deploy on fridays)
+</small>
 _____
 # thank you
-## xie xie
-## arigato
-## kasih
+<small>
+谢谢  
+terima kasih  
+धन्यवाद  
+ขอขอบคุณ  
+ありがとうございました  
+고맙습니다  
+cảm ơn bạn  
+</small>
+- - -
+**iam: joseph matthias goh**
+<table>
+  <tr>
+    <td>
+      <i class="fa fa-2x fa-envelope"></i>
+    </td>
+    <td>
+      <small>
+        <i class="fa fa-briefcase"></i> | <a href="mailto:joseph_goh@tech.gov.sg" target="_blank">joseph_goh@tech.gov.sg</a> (business)  
+        <i class="fa fa-comment"></i> | <a href="mailto:hello@joeir.net" target="_blank">hello@joeir.net</a> (pleasure)  
+        <i class="fa fa-github" style="font-size: 1.18em;"></i> | <a href="https://github.com/zephinzer" target="_blank">zephinzer</a> (stalking)
+      </small>
+    </td>
+  </tr>
+</table>
