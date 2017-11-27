@@ -303,27 +303,48 @@ ___
   - deploy to production after staging is successful
 ___
 ## deployment
-#### tools of the trade (vms)
-- pm2
-- foreman
-- nodemon
-- vagrant
-___
-## deployment
-#### tools of the trade (containers)
-- docker
-- pm2-docker
-- docker compose
-- docker swarm
-- kubernetes
-___
-## deployment
-#### paid services
-- heroku
-- red hat openshift (os)
-- google container engine (gke)
-- aws ec2 container service (ecs)
-- azure container service (acs?)
+#### common tools
+<table>
+  <tr>
+    <td>
+      VMs
+    </td>
+    <td>
+      Containers
+    </td>
+    <td>
+      Services
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <small>
+      [pm2](https://github.com/Unitech/pm2)  
+      [foreman](https://github.com/strongloop/node-foreman)  
+      [nodemon](https://github.com/remy/nodemon)  
+      [vagrant](https://www.vagrantup.com/)  
+      </small>
+    </td>
+    <td>
+      <small>
+      [docker](https://www.docker.com/)  
+      [pm2-docker](http://pm2.keymetrics.io/docs/usage/docker-pm2-nodejs/)  
+      [docker compose](https://github.com/docker/compose)  
+      [docker swarm](https://github.com/docker/swarm)  
+      [kubernetes](https://kubernetes.io/)  
+      </small>
+    </td>
+    <td>
+      <small>
+      [heroku](https://www.heroku.com/)  
+      [red hat openshift (os)](https://www.openshift.com/)  
+      [google container engine (gke)](https://cloud.google.com/kubernetes-engine/)  
+      [aws elastic container service (ecs)](https://aws.amazon.com/ecs/)  
+      [azure container service (acs?)](https://azure.microsoft.com/en-us/services/container-service/)  
+      </small>
+    </td>
+  </tr>
+</table>
 _____
 <!-- .slide: class="center" data-background="./how-we-did-it-l.jpg"  -->
 # how we did it
@@ -364,23 +385,6 @@ ___
 - customised build/test/release process
 - no single point of failure
 - faster npm install process
-___
-## tasks management
-#### use your package.json
-
-- define tasks in `"scripts"` property
-- reference these tasks in the ci pipeline
-  - avoids wall of text in ci pipeline definition
-
-```json
-{
-  "scripts": {
-    "start": "node ./entrypoint.js",
-    "unit-test": "mocha --recursive \"./test/\"",
-    "system-test": "karma start ."
-  }
-}
-```
 ___
 ## dependency mangement
 #### isolate `devDependencies`
@@ -572,7 +576,6 @@ ___
 ## in summary
 <small>
 one codebase; one application  
-define tasks in package.json  
 isolate & lazy-load `devDependencies`  
 use a lockfile for dependencies  
 keep configuration out of the code  
@@ -596,8 +599,14 @@ ___
 ## build management
 #### build in encapsulated environments
 - binaries may differ across operating systems
-- ensure consistency of builds
 - use a `Dockerfile`
+```dockerfile
+FROM org/image:versionTag
+ENV NODE_ENV="production"
+WORKDIR /app
+COPY ./package.json /app/package.json
+RUN npm run build
+```
 ___
 ## dependency optimisation
 #### version your dependencies (I)
@@ -633,7 +642,7 @@ ___
   WORKDIR /app
   COPY ./package.json /app/package.json
   COPY ./yarn.lock /app/yarn.lock
-  RUN yarn install
+  RUN npm install [--production]
   ```
 - dockerfile for application build
 ```dockerfile
@@ -879,8 +888,8 @@ ___
 ___
 ## summary
 <small>
-  ensure code maintainability  
-  ensure code level security  
+  code maintainability  
+  code level security  
   unit and system tests  
   integration tests  
   load tests  
@@ -1124,11 +1133,13 @@ ___
 ___
 ## summary
 <small>
-define infrastructure as code  
-deploy application and backing services with `Deployment`s  
-deploy administrative services with `CronJob`s  
-optimise deployment for quantity  
-mitigate memory leaks via disposability principle  
+define base system with docker  
+define infrastructure with kubernetes  
+`Deployment`s for backing/app services  
+`Service`s for exposing `Deployment`s  
+`CronJob`s for admin services  
+focus on quantity when scaling  
+let memory leaks die  
 </small>
 ___
 <!-- .slide: class="center" -->
@@ -1159,7 +1170,7 @@ _____
       <h4>
         got feedback?
       </h4>
-      <img src="./feedback-logo-white.png"
+      <img src="./cicdjs-feedback-logo-white.png"
         style="border: none !important;width:340px;height:340px" />
       <small>
         <small>
