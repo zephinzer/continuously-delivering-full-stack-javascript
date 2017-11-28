@@ -290,6 +290,18 @@ ___
 ```
 ___
 ## deployment
+#### what it looks like (I)
+<img src="./deployments-1.png"
+  style="border: none !important;"
+/>
+___
+## deployment
+#### what it looks like (II)
+<img src="./deployments-2.png"
+  style="border: none !important;"
+/>
+___
+## deployment
 #### what it is not
 
 - is **not** the environment
@@ -378,13 +390,11 @@ ___
 writing deployment-friendly javascript
 ___
 ## codebase management
-#### one codebase; one application
+#### one codebase; many deploys
 
 - one ci pipeline per application
-- one ci pipeline, multiple deploys
 - customised build/test/release process
 - no single point of failure
-- faster npm install process
 ___
 ## dependency mangement
 #### isolate `devDependencies`
@@ -421,6 +431,7 @@ ___
 - npm 5 comes with package-lock.json
 - yarn comes with yarn.lock
 - standardises dependency version
+- no 'it works on my machine'
 ___
 ## environment management
 #### keep configuration out of the code (I)
@@ -447,17 +458,7 @@ ___
   ```yaml
   NODE_ENV=development
   ```
-- docker compose
-  ```yaml
-  environment:
-    - NODE_ENV=development
-  ```
-- kubernetes
-  ```yaml
-  env:
-  - name: NODE_ENV
-    value: development
-  ```
+- docker compose and kubernetes for deployments
 ___
 ## environment management
 #### keep configuration out of the code (III)
@@ -465,6 +466,7 @@ ___
 
 ```javascript
 if ( process.env.NODE_ENV === 'development' ) {
+  const webpackHotMiddleware = require('webpack-hot-middleware');
   server.use(webpackHotMiddleware);
 }
 ```
@@ -474,7 +476,6 @@ ___
 
 - reduce number of environments to 2, `dev` and `prod`
 - keep logical code execution as similar as possible
-- use adapters with common interfaces to reference backing services
 ___
 ## environment management
 #### services as attached resources
@@ -497,9 +498,8 @@ ___
 #### version the data schema (I)
 
 - use database migrations
-- keeps code database-agnostic
 - incremental schema changes specified in code
-  - READ: versionable!
+  - READ: versionable/predictable - whatever's in the migrations defines the current state of the database
 
 ```javascript
 exports.up = function(knex, Promise) { /* ... */ };
@@ -525,20 +525,11 @@ knex.schema.createTable('profile', (table) => {
 ```
 ___
 ## process management
-#### get to .listen() fast
-
-- be receptive to requests as soon as possible
-- promotes fast startup
-- easier and faster deployments
-___
-## process management
 #### keep the application stateless
 
 - avoid file i/o operations
   - eg PID file
 - avoid multiple service connections to same service
-- promotes scaling via the process model
-- promotes fast startups and graceful shutdowns
 ___
 ## process management
 #### singleton pattern for service connection
@@ -568,8 +559,7 @@ ___
 ## process management
 #### log everything, and log to stdout
 
-- logging precedes security
-- keeps application stateless
+- keeps application stateless (no files)
 - allows for logs to be collated by process manager/container orchestrator
 - do logs filtering from logs collator
 ___
@@ -610,18 +600,9 @@ RUN npm run build
 ___
 ## dependency optimisation
 #### version your dependencies (I)
-- hasten builds
+- hastens builds
 - hash the lockfile/package.json for the dependency version
-
-```bash
-HASH="$(md5 ./yarn.lock)$(md5 ./package.json)";
-```
-
-___
-## dependency optimisation
-#### version your dependencies (II)
-- build only if hash doesn't exist
-- push after the build is completed
+- reuse if it already exists
 
 ```bash
 HASH="$(md5 ./yarn.lock)$(md5 ./package.json)";
@@ -635,7 +616,7 @@ fi;
 ```
 ___
 ## dependency optimisation
-#### version your dependencies (III)
+#### version your dependencies (II)
 - dependency building dockerfile
   ```dockerfile
   FROM zephinzer/alpine-node:v8.9.1
@@ -797,63 +778,9 @@ ___
 ___
 ## functional verification
 #### unit/system tests
-<table style="width:100%">
-  <tr style="width:100%">
-    <td>
-    <small>
-      frameworks
-    </small>
-    </td>
-    <td>
-    <small>
-      assertion
-    </small>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <small>
-        [mocha](https://github.com/mochajs/mocha)  
-        [jest](https://github.com/facebook/jest)
-      </small>
-    </td>
-    <td>
-      <small>
-        [chai](https://github.com/chaijs/chai)  
-        [jasmine](https://github.com/jasmine/jasmine)  
-        [should](https://github.com/shouldjs/should.js/)  
-      </small>
-    </td>
-  </tr>
-  <tr>
-    <td>
-    <small>
-      stubbing/mocking
-    </small>
-    </td>
-    <td>
-    <small>
-      runners
-    </small>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <small>
-        [sinon](https://github.com/sinonjs/sinon)  
-        [rewire](https://github.com/jhnns/rewire)  
-        [proxyquire](https://github.com/thlorenz/proxyquire)  
-        [supertest](https://github.com/visionmedia/supertest)  
-      </small>
-    </td>
-    <td>
-      <small>
-        [karma](https://github.com/karma-runner/karma)  
-        [ava](https://github.com/avajs/ava)  
-      </small>
-    </td>
-  </tr>
-</table>
+- ensures basic code blocks work
+- mocha framework
+- karma runner for front-end
 
 ___
 ## functional verification
