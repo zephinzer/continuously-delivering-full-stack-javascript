@@ -877,7 +877,6 @@ ___
 ___
 ## version management
 #### using git tags (II)
-- [github.com/zephinzer/version-tagging-scripts](https://github.com/zephinzer/version-tagging-scripts) (DISCLAIMER: yours truly)
 - initialize your repository:
   - ./versioning-tagging-scripts/init -q
 - get the latest tag:
@@ -886,6 +885,7 @@ ___
   - ./versioning-tagging-scripts/iterate patch -q -i
   - ./versioning-tagging-scripts/iterate minor -q -i
   - ./versioning-tagging-scripts/iterate major -q -i
+- read more: [github.com/zephinzer/version-tagging-scripts](https://github.com/zephinzer/version-tagging-scripts)
 ___
 ## package management
 #### using docker for immutability
